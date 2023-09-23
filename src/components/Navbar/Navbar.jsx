@@ -1,4 +1,3 @@
-import { useState } from "react";
 import LinkItem from "./LinkItem";
 
 const links = [
@@ -24,13 +23,18 @@ const links = [
     text: "Technology",
   },
 ];
-function Navbar() {
+
+function Navbar({ hideNavbar }) {
   return (
     <nav>
-      <ul className="primary-navigation flex underline-indicators">
+      <ul
+        id="primary-navigation"
+        className={`primary-navigation flex underline-indicators`}
+        data-visible={hideNavbar ? "false" : "true"}
+      >
         {links.map((link) => (
           <LinkItem key={link.number} active={link.active} to={link.to}>
-            <span>{link.number}</span>
+            <span aria-hidden={"true"}>{link.number}</span>
             {link.text}
           </LinkItem>
         ))}

@@ -1,15 +1,12 @@
 import { useEffect } from "react";
 import LargeButton from "../../components/LargeButton";
+import useBodyClass from "../../hooks/useBodyClass";
 
 function Home() {
-  // Set the Body Class so I can use it to modify the background image
-
-  useEffect(() => {
-    document.querySelector("body").className = "home";
-  }, []);
+  useBodyClass("home");
 
   return (
-    <div className="grid-container">
+    <main className="grid-container" id="main">
       <div>
         <h1 className="uppercase fs-500 ff-sans-cond letter-spacing-1 text-accent">
           So, you want to travel to{" "}
@@ -25,7 +22,7 @@ function Home() {
       <div>
         <LargeButton to={"destination"}>explore</LargeButton>
       </div>
-    </div>
+    </main>
   );
 }
 
