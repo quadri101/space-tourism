@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import LargeButton from "../../components/LargeButton";
 import useBodyClass from "../../hooks/useBodyClass";
 
@@ -6,7 +5,7 @@ function Home() {
   useBodyClass("home");
 
   return (
-    <main className="grid-container" id="main">
+    <main className="grid-container grid-container--home" id="main">
       <div>
         <h1 className="uppercase fs-500 ff-sans-cond letter-spacing-1 text-accent">
           So, you want to travel to{" "}

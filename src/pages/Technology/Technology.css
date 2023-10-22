@@ -1,0 +1,83 @@
+.technology {
+  background-image: url(/assets/technology/background-technology-mobile.jpg);
+}
+
+.technology-info > p {
+  color: hsl(var(--clr-light));
+}
+
+.technology-info {
+  --flow-space: 1rem;
+}
+
+.numbered-indicators {
+  --gap: 1.5rem;
+  grid-auto-flow: column;
+}
+
+.grid-container--technology.grid-container {
+  gap: 3rem;
+  grid-template-areas:
+    "title"
+    "image"
+    "numbered-indicators"
+    "content";
+  padding-inline: 0;
+}
+
+.grid-container--technology > picture {
+  grid-area: image;
+}
+
+.grid-container--technology > .numbered-indicators {
+  grid-area: numbered-indicators;
+}
+
+.technology-info {
+  grid-area: content;
+}
+
+@media (min-width: 35rem) and (max-width: 50rem) {
+  .technology {
+    background-image: url(/assets/technology/background-technology-tablet.jpg);
+  }
+
+  .numbered-indicators {
+    --gap: 2rem;
+  }
+  .grid-container--technology .numbered-title {
+    margin-inline-start: 1rem;
+  }
+}
+
+@media (min-width: 50rem) {
+  .technology {
+    background-image: url(/assets/technology/background-technology-desktop.jpg);
+  }
+
+  .grid-container--technology.grid-container {
+    grid-template-columns:
+      minmax(2rem, 1fr) min-content repeat(2, minmax(0, 40rem))
+      minmax(2rem, 1fr);
+    grid-template-rows: min-content auto;
+    grid-template-areas:
+      ". title title . ."
+      ". numbered-indicators content image image";
+    justify-items: start;
+    align-content: center;
+
+    margin-inline: auto;
+  }
+
+  .numbered-indicators {
+    grid-auto-flow: row;
+  }
+
+  .grid-container--technology .numbered-title {
+    margin-inline-start: 1rem;
+  }
+
+  .grid-container--technology > picture {
+    justify-self: end;
+  }
+}

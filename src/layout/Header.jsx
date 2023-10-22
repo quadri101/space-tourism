@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Navbar from "../components/Navbar";
 function Header() {
   const [hideNavbar, setHideNavbar] = useState(true);
@@ -10,7 +10,11 @@ function Header() {
   return (
     <header className="primary-header flex">
       <div>
-        <img className="logo" src="/assets/shared/logo.svg" />
+        <img
+          alt="the company logo"
+          className="logo"
+          src="/assets/shared/logo.svg"
+        />
       </div>
       <button
         onClick={toggleNavbar}
